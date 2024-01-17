@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style type="text/css">
+
+
+.workshops{
+  list-style: none;
+}
+
+  </style>
+</head>
+<body>
+
+  <div style="text-align: center;">
+    
+    <div class="textbox">
+      <p>QBN Consultancy Dashboard</p>
+    </div>
+  </div>
+
+  <div style="overflow-x: auto;background-color: white;margin-top: 5%;padding: 0px 15px 10px 10px;">
+    <div style="color: rgb(198,136,57);text-align: center;">
+      <p>Inactive Clients</p>
+      
+    </div>
+    <br>
+  <div>
+    <ul class="workshops">
+  <li>Completed workshops = 20</li>
+  <li>Number of attendees = 40</li>
+</ul>
+
+<canvas id="mydoughnutChart" style="width:100%;max-width:600px"></canvas>
+  </div>
+
+  <div>
+    <ul class="workshops">
+  <li>Number of employees = 1000</li>
+  <li>Potential attendees = 960</li>
+</ul>
+
+<canvas id="mybarChart" style="width:100%;max-width:600px"></canvas>
+  </div>
+
+
+</div>
+
+
+<script>
+const xValues = ["Completed workshops", "Number of attendees"];
+const yValues = [20, 40];
+const bardoughnutColors = [
+  "green",
+  "orange"
+];
+
+new Chart("mydoughnutChart", {
+  type: "doughnut",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: bardoughnutColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Workshops"
+    }
+  }
+});
+
+
+//bar chart
+
+const xbarValues = ["Number of employees", "Potential attendees"];
+const ybarValues = [1000, 960];
+const barColors = ["blue", "green"];
+
+new Chart("mybarChart", {
+  type: "doughnut",
+  data: {
+    labels: xbarValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: ybarValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Attend"
+    }
+  }
+});
+</script>
+
+</body>
+</html>

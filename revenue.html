@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style type="text/css">
+
+
+.workshops{
+  list-style: none;
+}
+
+.products{
+  display: inline-flex;
+  color: white;
+}
+
+.mastery{
+  background-color: purple;
+  margin-right: 10px;
+  padding-right: 20%;
+}
+
+.employee{
+  background-color: green;
+  margin-right: 10px;
+  padding-right: 20%;
+}
+.consultation{
+  background-color: orange;
+  padding-right: 15%;
+}
+
+  </style>
+</head>
+<body>
+
+  <div style="text-align: center;">
+    
+    <div class="textbox">
+      <p>QBN Consultancy Dashboard</p>
+    </div>
+  </div>
+
+  <div style="overflow-x: auto;background-color: white;margin-top: 5%;padding: 0px 15px 10px 10px;">
+    <div style="color: rgb(198,136,57);text-align: center;">
+      <p>Revenue</p>
+      
+    </div>
+    <div class="products">
+      <div class="mastery">
+        <p>R1 650</p>
+        <p style="width: max-content;">Self-Mastery Coaching</p>
+      </div>
+      <div class="employee">
+        <p>R13 000</p>
+        <p style="width: max-content;">Employee Wellness Coaching</p>
+      </div>
+      <div class="consultation">
+        <p>R10 000</p>
+        <p>Consultation</p>
+      </div>
+    </div>
+  <div style="border: 2px solid blue;margin-top: 5%;width: fit-content;">
+    <div style="background-color: blue;color: white;margin-top: -22px;">
+      <p>Revenue per Account</p>
+    </div>
+
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+  </div>
+  <div style="border: 2px solid blue;margin-top: 5%;width: fit-content;">
+    <div style="background-color: blue;color: white;margin-top: -22px;">
+      <p>Revenue per Product</p>
+    </div>
+
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+  </div>
+
+
+</div>
+
+
+<script>
+const xValues = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+new Chart("myChart", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
+      borderColor: "yellow",
+      fill: false
+    },{
+      data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,7000],
+      borderColor: "green",
+      fill: false
+    },{
+      data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
+      borderColor: "blue",
+      fill: false
+    }]
+  },
+  options: {
+    legend: {display: false}
+  }
+});
+</script>
+
+</body>
+</html>

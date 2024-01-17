@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+  <style type="text/css">
+    button{
+      float: right;
+      background-color: rgb(198,136,57);
+      color: white;
+      border: 2px solid rgb(198,136,57);
+      cursor: pointer;
+    }
+
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid rgb(198,136,57);
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(198,136,57);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#myEdit{
+  margin-right: 10px;
+}
+
+.statusopt{
+  display: none;
+}
+
+.submitbtn{
+  display: none;
+}
+
+.filter{
+  float: left;
+}
+
+  </style>
+</head>
+<body>
+
+
+  <div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>New Subscriber details</p>
+    <br>
+    <input type="text" name="" placeholder="Name and Surname">
+    <input type="text" name="" placeholder="Email">
+    <input type="text" name="" placeholder="Company">
+    <input type="text" name="" placeholder="Occupation">
+    <select style="margin-bottom: 20px;">
+      <option>Active</option>
+      <option>Inactive</option>
+      <option>Prospects</option>
+    </select>
+  
+    <button style="margin-bottom: 20%;">Submit</button>
+    <br> &nbsp;
+  </div>
+
+</div>
+
+  <div style="text-align: center;">
+    
+    <div class="textbox">
+      <p>QBN Consultancy Dashboard</p>
+    </div>
+  </div>
+
+	<div style="overflow-x: auto;background-color: white;margin-top: 5%;padding: 0px 15px 10px 10px;">
+    <div style="color: rgb(198,136,57);text-align: center;">
+      <p>Subscribers</p>
+      <button class="addbtn" id="myBtn">Add New Contact</button>
+      &nbsp;
+      <button class="editbtn" id="myEdit">Edit contact</button>
+      &nbsp; &nbsp; &nbsp;
+      <button class="submitbtn" id="mysubmit">submit</button>
+      &nbsp;
+      <select class="filter">
+      <option>50</option>
+      <option>100</option>
+      </select>
+    </div>
+    <br>
+  <table>
+    <tr>
+      <th>Name & Surname</th>
+      <th>Email Address</th>
+      <th>Company Name</th>
+      <th>Occupation</th>
+      <th>Status</th>
+    </tr>
+    <tr>
+      <td>Katlego Matshwi</td>
+      <td>matshwikatlego@gmail.com</td>
+      <td>store name</td>
+      <td>Human Resources</td>
+      <td><p id="statustext"></p><select class="statusopt" id="statusoptid">
+        <option>
+          Active
+        </option>
+        <option>
+          Inactive
+        </option>
+        <option>
+          Prospects
+        </option>
+      </select></td>
+
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+</div>
+
+
+<script>
+
+//change edit to dropdown
+
+
+
+var editbtn = document.getElementById("myEdit");
+
+var statustext = document.getElementById("statustext");
+    var statusopt = document.getElementById("statusoptid");
+    var mysubmit = document.getElementById("mysubmit");
+
+
+editbtn.onclick = function() {
+  
+console.log("it works");
+    statusopt.style.display = "block";
+    statustext.style.display = "none";
+    mysubmit.style.display = "block";
+   /*else {
+    statustext.style.display = "none";
+  }*/
+}
+
+mysubmit.onclick = function() {
+  alert("data sent successful");
+  
+    statusopt.style.display = "none";
+    statustext.style.display = "block";
+    mysubmit.style.display = "none";
+   /*else {
+    statustext.style.display = "none";
+  }*/
+
+    statustext.innerHTML = statusopt.value;
+}
+
+
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  
+}
+
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+</body>
+</html>

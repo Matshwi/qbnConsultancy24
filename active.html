@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style type="text/css">
+    button{
+      float: right;
+      background-color: rgb(198,136,57);
+      color: white;
+      border: 2px solid rgb(198,136,57);
+      cursor: pointer;
+    }
+
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid rgb(198,136,57);
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(198,136,57);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#myEdit{
+  margin-right: 10px;
+}
+
+.statusopt{
+  display: none;
+}
+
+.submitbtn{
+  display: none;
+}
+
+.filter{
+  float: left;
+}
+
+.workshops{
+  list-style: none;
+}
+
+  </style>
+</head>
+<body>
+
+  <div style="text-align: center;">
+    
+    <div class="textbox">
+      <p>QBN Consultancy Dashboard</p>
+    </div>
+  </div>
+
+  <div style="overflow-x: auto;background-color: white;margin-top: 5%;padding: 0px 15px 10px 10px;">
+    <div style="color: rgb(198,136,57);text-align: center;">
+      <p>Active Clients</p>
+      
+    </div>
+    <br>
+  <div>
+    <ul class="workshops">
+  <li>Running workshops = 20</li>
+  <li>Outstanding workshops = 30</li>
+  <li>Complete workshops = 50</li>
+</ul>
+
+<canvas id="mydoughnutChart" style="width:100%;max-width:600px"></canvas>
+  </div>
+
+  <div>
+    <ul class="workshops">
+  <li>Number of attendees = 100</li>
+  <li>Attended thus far = 40</li>
+  <li>Still to attend = 60</li>
+</ul>
+
+<canvas id="mybarChart" style="width:100%;max-width:600px"></canvas>
+  </div>
+
+
+</div>
+
+
+<script>
+const xValues = ["Running workshops", "Outstanding workshops", "Complete workshops"];
+const yValues = [20, 30, 50];
+const bardoughnutColors = [
+  "blue",
+  "orange",
+  "green"
+];
+
+new Chart("mydoughnutChart", {
+  type: "doughnut",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: bardoughnutColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Workshops"
+    }
+  }
+});
+
+
+//bar chart
+
+const xbarValues = ["Number of attendees", "Attended thus far", "Still to attend"];
+const ybarValues = [100, 40, 60];
+const barColors = ["blue", "green","orange"];
+
+new Chart("mybarChart", {
+  type: "doughnut",
+  data: {
+    labels: xbarValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: ybarValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Attend"
+    }
+  }
+});
+</script>
+
+</body>
+</html>

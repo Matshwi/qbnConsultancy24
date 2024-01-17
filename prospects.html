@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style type="text/css">
+
+
+.workshops{
+  list-style: none;
+}
+
+  </style>
+</head>
+<body>
+
+  <div style="text-align: center;">
+    
+    <div class="textbox">
+      <p>QBN Consultancy Dashboard</p>
+    </div>
+  </div>
+
+  <div style="overflow-x: auto;background-color: white;margin-top: 5%;padding: 0px 15px 10px 10px;">
+    <div style="color: rgb(198,136,57);text-align: center;">
+      <p>Prospects</p>
+      
+    </div>
+    <br>
+  <div>
+    <ul class="workshops">
+  <li>Number of Subscribers = 40</li>
+  <li>Booked meetings = 20</li>
+</ul>
+
+<canvas id="mydoughnutChart" style="width:100%;max-width:600px"></canvas>
+  </div>
+
+
+</div>
+
+
+<script>
+const xValues = ["Number of Subscribers", "Booked meetings"];
+const yValues = [40, 20];
+const bardoughnutColors = [
+  "orange",
+  "green"
+];
+
+new Chart("mydoughnutChart", {
+  type: "doughnut",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: bardoughnutColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Workshops"
+    }
+  }
+});
+</script>
+
+</body>
+</html>

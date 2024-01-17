@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>  
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div style="text-align: center;">
+		
+		<div class="textbox">
+			<p>QBN Consultancy Dashboard</p>
+		</div>
+	</div>
+
+	<div class="cards">
+  <div class="card" onclick="subscriber()">Subscribers</div>
+  <div class="card" onclick="active()">Active Clients</div>
+  <div class="card" onclick="inactive()">Inactive Clients</div>
+  <div class="card" onclick="prospects()">Prospects</div>
+  <div class="card" onclick="revenue()">Revenue</div>
+</div>
+
+
+<script type="text/javascript">
+
+	function subscriber(){
+		window.location = "subscribers.html"; 
+	}
+
+	function active(){
+		window.location = "active.html"; 
+	}
+	
+
+	function inactive(){
+		window.location = "inactive.html"; 
+	}
+
+	function prospects(){
+		window.location = "prospects.html"; 
+	}
+</script>
+
+</body>
+</html>
